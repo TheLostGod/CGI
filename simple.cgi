@@ -25,6 +25,6 @@ echo ""
 
 echo "Hello World"
 
-curlURL = $(curl www.csun.edu/~steve/)
+curlURL = $(curl "www.csun.edu/~steve/")
 
 echo "$curlURL"
