@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#! /bin/bash
-
 # This is a little CGI program
 ###################################################################
 # The following are environment variables that are available to you
@@ -25,6 +23,6 @@ echo "X-COMP-490: ${USER}"
 echo "Content-type: text/plain"
 echo ""
 
-HTML = $(curl www.csun.edu/~steve)
+HTML = $(curl www.csun.edu/~steve/)
 
 echo "${HTML}"
