@@ -25,6 +25,6 @@ echo ""
 
 echo "Hello World"
 
-#HTML = $(curl www.csun.edu/~steve/)
+curlURL = $(curl www.csun.edu/~steve/)
 
-#echo "${HTML}"
+#echo "$curlURL"
