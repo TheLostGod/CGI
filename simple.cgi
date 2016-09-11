@@ -23,8 +23,8 @@ echo "X-COMP-490: ${USER}"
 echo "Content-type: text/plain"
 echo ""
 
-var=$(curl -s www.mattzera.com)
+var=$(curl -s www.csun.edu/~steve/))
 
-echo "$var"
+echo $var
 
 exit 0
