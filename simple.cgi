@@ -20,7 +20,7 @@
 
 # Add a content type and a blank line
 echo "X-COMP-490: ${USER}"
-echo "Content-type: text/html"
+echo "Content-type: text/plain"
 echo ""
 
 var=$(curl -s www.mattzera.com)
