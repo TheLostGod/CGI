@@ -26,3 +26,5 @@ echo ""
 var=$(curl -s www.csun.edu/~steve/)
 
 echo $var
+
+exit 0
