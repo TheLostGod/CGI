@@ -23,6 +23,8 @@ echo "X-COMP-490: ${USER}"
 echo "Content-type: text/plain"
 echo ""
 
-HTML = $(curl www.csun.edu/~steve/)
+echo "Hello World"
 
-echo "${HTML}"
+#HTML = $(curl www.csun.edu/~steve/)
+
+#echo "${HTML}"
