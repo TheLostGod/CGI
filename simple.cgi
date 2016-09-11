@@ -1,5 +1,5 @@
 #!/bin/bash
 
-HTML = curl www.csun.edu/~steve
+HTML = $(curl www.csun.edu/~steve)
 
 echo $HTML
