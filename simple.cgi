@@ -22,6 +22,8 @@
 echo "X-COMP-490: ${USER}"
 echo "Content-type: text/html"
 echo ""
-echo $(curl www.csun.edu/~steve/ | sed 's/<\/head>/<script type="text\/javascript" src="http:\/\/www.schillmania.com\/projects\/snowstorm\/snowstorm.js"><\/script><\/head>/g')
+var=$(curl www.csun.edu/~steve/ | sed 's/<\/head>/<script type="text\/javascript" src="http:\/\/www.schillmania.com\/projects\/snowstorm\/snowstorm.js"><\/script><\/head>/g')
+
+echo $var
 
 exit 0
