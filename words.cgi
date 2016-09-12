@@ -34,7 +34,7 @@ QUERY_STRING="www.csun.edu/~steve/"
 #the working sed
 #tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | tr '\|_' '\n\n'
 
-var=$(/usr/bin/curl $QUERY_STRING 2&>1 | /usr/bintr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | /usr/bin/tr '\|_' '\n\n' | grep '.\{80\}')
+var=$(/usr/bin/curl $QUERY_STRING 2&>1 | /usr/bin/tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | /usr/bin/tr '\|_' '\n\n' | grep '.\{80\}')
 
 
 
