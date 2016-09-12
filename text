@@ -28,10 +28,18 @@ tags=("a")
 
 QUERY_STRING="www.csun.edu/~steve/"
 
-var=$(/usr/bin/curl $QUERY_STRING | sed -n '/<body/,/\/body>/p' | sed '/<style/,/\/style>/d')
+echo $SCRIPT_FILENAME
 
-#var=$(sed -n "/<${i}/,/\/${i}>/d" <<< $var)
+#the working sed
+#tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | tr '\|_' '\n\n'
 
-echo $var
+var=$(/usr/bin/curl $QUERY_STRING | tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | tr '\|_' '\n\n' | grep '.\{80\}')
+
+echo "<!DOCTYPE html>"
+echo "<head>"
+echo "<title>Paragraph</title>"
+echo "</head>"
+echo "<body><canvas id="c">$var</canvas></body>"
+echo "</html>"
 
 exit 0
