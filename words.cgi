@@ -32,7 +32,7 @@ QUERY_STRING="www.csun.edu/~steve/"
 #the working sed
 #tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | tr '\|_' '\n\n'
 
-var=$(curl $QUERY_STRING 2&>1)
+var=$(curl "www.csun.edu/~steve/" 2&>1)
 
 #| /usr/bin/tr '        \n' '  ' |
 
