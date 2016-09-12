@@ -36,6 +36,7 @@ var=$(curl "www.csun.edu/~steve/" 2&>1)
 
 #| /usr/bin/tr '        \n' '  ' |
 
+echo $var
 echo "<!DOCTYPE html>"
 echo "<head>"
 echo "<title>Paragraph</title>"
