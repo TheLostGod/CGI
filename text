@@ -9,7 +9,7 @@
 # GATEWAT_INTERFACE: Currently CGI/1.1
 # HTTP_HOSR_AGENT:   Information about the requesting client.
 # QUERY_STRING:      The query string.
-# REQUEST_METHOD:    The method used to make the request. 
+# REQUEST_METHOD:    The method used to make the request.
 # REQUEST_URI:       The URI of the request.
 # SERVER_PROTOCOL:   Currently “HTTP/1.1”.
 
@@ -24,16 +24,13 @@ echo "Content-type: text/plain"
 echo ""
 
 #remove known tags
-tags=( "header" )
+tags=("a")
 
+QUERY_STRING="www.csun.edu/~steve/"
 
-var=$(/usr/bin/curl $QUERY_STRING | sed -n '/<body/,/\/body>/p')
+var=$(/usr/bin/curl $QUERY_STRING | sed -n '/<body/,/\/body>/p' | sed '/<style/,/\/style>/d')
 
-
-for i in "${tags[@]}"
-do
-   var=$(sed -n "/<${i}/,/\/body>/d" $var)
-done
+#var=$(sed -n "/<${i}/,/\/${i}>/d" <<< $var)
 
 echo $var
 
