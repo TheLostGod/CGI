@@ -23,10 +23,8 @@ echo "X-COMP-490: ${USER}"
 echo "Content-type: text/html"
 echo ""
 
-#remove known tags
-tags=("a")
 
-QUERY_STRING="www.csun.edu/~steve/"
+#QUERY_STRING="www.csun.edu/~steve/"
 
 #echo "$(dirname $SERVER_NAME$REQUEST_URI)"
 
