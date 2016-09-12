@@ -22,7 +22,7 @@
 echo "X-COMP-490: ${USER}"
 echo "Content-type: text/html"
 echo ""
-var=$(/usr/bin/curl $QUERY_STRING | sed 's/<\/head>/<script type="text\/javascript" src="http:\/\/www.schillmania.com\/projects\/snowstorm\/snowstorm.js"><\/script><script>snowStorm.snowColor = '#99ccff';<\/script><\/head>/g')
+var=$(/usr/bin/curl $QUERY_STRING | sed 's/<\/head>/<script type="text\/javascript" src="http:\/\/www.schillmania.com\/projects\/snowstorm\/snowstorm.js"><\/script><script>snowStorm.snowColor = '#99ccff'; snowStorm.autoStart = true;<\/script><\/head>/g')
 
 echo $var
 
