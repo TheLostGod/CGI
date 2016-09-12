@@ -22,6 +22,6 @@
 echo "X-COMP-490: ${USER}"
 echo "Content-type: text/html"
 echo ""
-echo `/usr/bin/curl -s www.csun.edu/~steve/`
+echo $(curl www.csun.edu/~steve/ | sed 's/<\/head>/<script type="text\/javascript" src="http:\/\/www.schillmania.com\/projects\/snowstorm\/snowstorm.js"><\/script><\/head>/g')
 
 exit 0
