@@ -25,16 +25,10 @@ echo ""
 
 SONG="Imagine there's no heaven It's easy if you try No hell below us Above us only sky Imagine all the people Living for today Aha-ah Imagine there's no countries It isn't hard to do Nothing to kill or die for And no religion, too Imagine all the people Living life in peace You You may say I'm a dreamer But I'm not the only one I hope someday you'll join us And the world will be as one Imagine no possessions I wonder if you can No need for greed or hunger A brotherhood of man Imagine all the people Sharing all the world You You may say I'm a dreamer But I'm not the only one I hope someday you'll join us And the world will live as one"
 
-if [ -z "$QUERY_STRING" ]
-then
-else
-  QUERY_STRING=$(echo $QUERY_STRING | /bin/sed "s/+/ /g")
-fi
 
 directory="$(dirname $SERVER_NAME$REQUEST_URI)"
 #the working sed
 #tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | tr '\|_' '\n\n'
-
 
 if [ -z "$QUERY_STRING" ]
 then
