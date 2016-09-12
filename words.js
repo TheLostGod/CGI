@@ -10,7 +10,7 @@ window.onload = function(argument) {
 
 	var canvas = document.getElementById('c');
 
-	var lyric = canvas.innerHTML;
+	lyric = canvas.innerHTML;
 
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
