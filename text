@@ -28,7 +28,7 @@ tags=("a")
 
 QUERY_STRING="www.csun.edu/~steve/"
 
-echo "$(dirname $SERVER_NAME$REQUEST_URI)"
+#echo "$(dirname $SERVER_NAME$REQUEST_URI)"
 
 
 #the working sed
