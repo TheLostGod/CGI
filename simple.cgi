@@ -22,9 +22,7 @@
 echo "X-COMP-490: ${USER}"
 echo "Content-type: text/plain"
 echo ""
-
 var=`curl -s www.csun.edu/~steve/ | grep body`
-
 echo $var
 
 exit 0
