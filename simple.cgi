@@ -21,6 +21,7 @@
 # Add a content type and a blank line
 echo "X-COMP-490: ${USER}"
 echo "Content-type: text/plain"
+echo ""
 echo "Hello World"
 
 exit 0
