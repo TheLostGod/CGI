@@ -30,11 +30,10 @@ tags=( "header" )
 var=$(/usr/bin/curl $QUERY_STRING | sed -n '/<body/,/\/body>/p')
 
 
-for i in "${tags[@]}"
-do
-   var=$(cat $var | sed -n '/<${i}/,/\/${i}>/d')
-done
-
+#for i in "${tags[@]}"
+#do
+#   var=$(cat $var | sed -n '/<${i}/,/\/${i}>/d')
+#done
 
 
 echo $var
