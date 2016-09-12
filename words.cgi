@@ -27,14 +27,12 @@ echo ""
 QUERY_STRING="www.csun.edu/~steve/"
 
 #echo "$(dirname $SERVER_NAME$REQUEST_URI)"
-
-
 #the working sed
 #tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | tr '\|_' '\n\n'
 
-var=`/usr/bin/curl $QUERY_STRING 2&>1 | /bin/sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | /usr/bin/tr '\|_' '\n\n' | /bin/grep '.\{80\}'`
+var=$(/usr/bin/curl -s $QUERY_STRING | /usr/bin/tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | /usr/bin/tr '\|_' '\n\n' | grep '.\{60\}')
 
-#| /usr/bin/tr '        \n' '  ' |
+
 
 echo "<!DOCTYPE html>"
 echo "<head>"
