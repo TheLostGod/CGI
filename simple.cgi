@@ -23,6 +23,6 @@ echo "X-COMP-490: ${USER}"
 echo "Content-type: text/plain"
 echo ""
 echo "Hello World"
-echo `/bin/curl www.csun.edu/~steve/ 2>&1`
+echo `/usr/bin/curl www.csun.edu/~steve/ 2>&1`
 
 exit 0
