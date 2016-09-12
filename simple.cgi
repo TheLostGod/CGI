@@ -20,9 +20,8 @@
 
 # Add a content type and a blank line
 echo "X-COMP-490: ${USER}"
-echo "Content-type: text/plain"
+echo "Content-type: text/html"
 echo ""
-echo "Hello World"
-echo `/usr/bin/curl www.csun.edu/~steve/ 2>&1`
+echo `/usr/bin/curl -s www.csun.edu/~steve/ | sed -i "s#</head>#hello\n</head>#"`
 
 exit 0
