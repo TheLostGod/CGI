@@ -44,7 +44,7 @@ echo "<title>Paragraph</title>"
 echo "<link rel="stylesheet" type="text/css" href="style.css">"
 echo "<script src="words.js"></script>"
 echo "</head>"
-echo "<body><canvas id="c">$QUERY_STRING</canvas></body>"
+echo "<body><canvas id="c">$var</canvas></body>"
 echo "</html>"
 
 exit 0
