@@ -9,8 +9,6 @@ window.onload = function(argument) {
 	var words_attr = [];
 	string_handle(lyric);
 
-
-
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 
