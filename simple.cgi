@@ -22,6 +22,5 @@
 echo "X-COMP-490: ${USER}"
 echo "Content-type: text/plain"
 echo "Hello World"
-echo `curl -s www.csun.edu/~steve/ | grep body`
 
 exit 0
