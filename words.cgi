@@ -35,7 +35,7 @@ then
 var=$SONG
 else
   QUERY_STRING=$(echo $QUERY_STRING | /bin/sed "s/+/ /g")
-  var=$(/usr/bin/curl -s $QUERY_STRING | /usr/bin/tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | /usr/bin/tr '\|_' '\n\n' | grep '.\{60\}')
+  var=$(/usr/bin/curl -s $QUERY_STRING | /usr/bin/tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.+-][ a-zA-Z0-9(),'.+-]*\)/\|\1\|/g" | /usr/bin/tr '\|_' '\n\n' | grep '.\{60\}')
 fi
 
 if [ -z "$var" ]
