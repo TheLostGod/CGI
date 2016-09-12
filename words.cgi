@@ -34,7 +34,7 @@ echo ""
 
 var=$(/usr/bin/curl $QUERY_STRING 2&>1 | /bin/sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | /usr/bin/tr '\|_' '\n\n' | /bin/grep '.\{80\}')
 
-#| /usr/bin/tr '        \n' '  ' | 
+#| /usr/bin/tr '        \n' '  ' |
 
 echo "<!DOCTYPE html>"
 echo "<head>"
@@ -42,7 +42,7 @@ echo "<title>Paragraph</title>"
 echo "<link rel="stylesheet" type="text/css" href="style.css">"
 echo "<script src="words.js"></script>"
 echo "</head>"
-echo "<body><canvas id="c">$var</canvas></body>"
+echo "<body><canvas id=\"c\">$var</canvas></body>"
 echo "</html>"
 
 exit 0
