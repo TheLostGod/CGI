@@ -28,7 +28,7 @@ tags=("a")
 
 QUERY_STRING="www.csun.edu/~steve/"
 
-echo "$SERVER_NAME$REQUEST_URI"
+echo "$(dirname $SERVER_NAME$REQUEST_URI)"
 
 #the working sed
 #tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | tr '\|_' '\n\n'
