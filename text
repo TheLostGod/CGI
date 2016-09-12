@@ -22,7 +22,20 @@
 echo "X-COMP-490: ${USER}"
 echo "Content-type: text/plain"
 echo ""
-var=$(/usr/bin/curl $QUERY_STRING | curl www.csun.edu/~steve/ | sed -n '/<body/,/\/body>/p')
+
+#remove known tags
+tags=( "header" )
+
+
+var=$(/usr/bin/curl $QUERY_STRING | sed -n '/<body/,/\/body>/p')
+
+
+for i in "${tags[@]}"
+do
+   var=$(cat $var | sed -n '/<${i}/,/\/${i}>/d')
+done
+
+
 
 echo $var
 
