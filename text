@@ -32,9 +32,8 @@ var=$(/usr/bin/curl $QUERY_STRING | sed -n '/<body/,/\/body>/p')
 
 for i in "${tags[@]}"
 do
-   echo $var | sed -n '/<${i}/,/\/${i}>/d'
+   var=$(sed -n "/<${i}/,/\/body>/d" $var)
 done
-
 
 echo $var
 
