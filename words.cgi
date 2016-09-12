@@ -30,7 +30,7 @@ else
   QUERY_STRING=$(echo $QUERY_STRING | /bin/sed "s/+/ /g")
 fi
 
-#echo "$(dirname $SERVER_NAME$REQUEST_URI)"
+directory="$(dirname $SERVER_NAME$REQUEST_URI)"
 #the working sed
 #tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | tr '\|_' '\n\n'
 
