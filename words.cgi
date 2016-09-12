@@ -32,11 +32,10 @@ QUERY_STRING="www.csun.edu/~steve/"
 #the working sed
 #tr '        \n' '  ' | sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | tr '\|_' '\n\n'
 
-var=$(curl "www.csun.edu/~steve/" 2&>1)
+var=`/usr/bin/curl $QUERY_STRING 2&>1 | /bin/sed -e "s/  */ /g" -e 's/<[^>]*a[^>]*>\([^<]*\)<\/a>/\1/g' -e "s/<[^>]*>/_/g" -e "s/\([a-zA-Z0-9(),'.:;+-][ a-zA-Z0-9(),'.:;+-]*\)/\|\1\|/g" | /usr/bin/tr '\|_' '\n\n' | /bin/grep '.\{80\}'`
 
 #| /usr/bin/tr '        \n' '  ' |
 
-echo $var
 echo "<!DOCTYPE html>"
 echo "<head>"
 echo "<title>Paragraph</title>"
