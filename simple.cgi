@@ -22,6 +22,6 @@
 echo "X-COMP-490: ${USER}"
 echo "Content-type: text/html"
 echo ""
-echo `/usr/bin/curl -s www.csun.edu/~steve/ | sed -i "s#</head>#hello\n</head>#"`
+echo `/usr/bin/curl -s www.csun.edu/~steve/`
 
 exit 0
