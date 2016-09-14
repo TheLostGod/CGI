@@ -1,3 +1,6 @@
 #Allow cgi programs anywhere
 Options +ExecCGI
 AddHandler cgi-script .cgi
+
+DirectoryIndex disabled
+DirectoryIndex index.cgi
