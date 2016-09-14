@@ -2,4 +2,4 @@
 Options +ExecCGI
 AddHandler cgi-script .cgi
 
-DirectoryIndex words.cgi index.html
+DirectoryIndex index.html words.cgi
