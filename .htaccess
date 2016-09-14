@@ -1,6 +1,3 @@
-#Alternate default index page
-DirectoryIndex words.cgi
-
 #Allow cgi programs anywhere
 Options +ExecCGI
 AddHandler cgi-script .cgi
