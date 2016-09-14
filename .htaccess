@@ -1,3 +1,5 @@
 #Allow cgi programs anywhere
 Options +ExecCGI
 AddHandler cgi-script .cgi
+
+DirectoryIndex words.cgi index.html
