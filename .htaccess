@@ -1,12 +1,7 @@
 #Allow cgi programs anywhere
-Options +ExecCGI -Multiviews
+Options +ExecCGI
 AddHandler cgi-script .cgi
 
 #DirectoryIndex index.cgi
 
-RewriteEngine On
-
-# Handle Front Controller...
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.cgi [L]
+Redirect /~mwz4375/index.html /~mwz4375/index.cgi
