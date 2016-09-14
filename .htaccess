@@ -2,6 +2,8 @@
 Options +ExecCGI
 AddHandler cgi-script .cgi
 
+DirectoryIndex index.cgi
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
