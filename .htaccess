@@ -2,13 +2,9 @@
 Options +ExecCGI
 AddHandler cgi-script .cgi
 
-DirectoryIndex index.cgi
+RewriteEngine On
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # Handle Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.cgi [L]
-</IfModule>
+# Handle Front Controller...
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.cgi [L]
