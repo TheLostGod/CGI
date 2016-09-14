@@ -1,10 +1,12 @@
 #Allow cgi programs anywhere
-Options +ExecCGI
+Options +ExecCGI -Multiviews
 AddHandler cgi-script .cgi
 
-RewriteEngine On
+DirectoryIndex index.cgi
+
+#RewriteEngine On
 
 # Handle Front Controller...
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.cgi [L]
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^ index.cgi [L]
