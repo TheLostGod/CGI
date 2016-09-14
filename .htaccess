@@ -8,5 +8,5 @@ AddHandler cgi-script .cgi
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^$ index.cgi [L]
+    RewriteRule ^ index.cgi [L]
 </IfModule>
